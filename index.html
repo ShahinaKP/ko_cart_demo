@@ -19,10 +19,8 @@
         <div data-bind="with:selectMobileModel"> 
             <div data-bind="visible: showMobiles, foreach: productsArray">
                 <h4>Select your Mobile</h4>                
-                <p data-bind="text:category">
-                <ul data-bind="foreach: products"> 
-                    <li data-bind="text: name"></li>
-                </ul>
+                
+                
                 <table width='100%'>
                     <thead>
                         <tr>
@@ -34,40 +32,32 @@
                             <th width='10%'> </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-bind='foreach: $parent.lines'>
                         <tr>
                             <td >
-                                <select data-bind='options: products, optionsText: "name", optionsCaption: "Select...", value: $parent.product'> </select>
-                            </td>
-                            <td class='price' data-bind='with: $parent.product'>
-                                <span data-bind='text: formatCurrency(price)'> </span>
-                            </td>
-                           <!--  <td>
-                                <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: $parent.productsArray'> </select>
-                            </td -->
-                            <!-- <td >
-                                <select data-bind='options: products, optionsText: "name", optionsCaption: "Select...", value: name'> </select>
+                                <select data-bind='options: $parent.products, optionsText: "name", optionsCaption: "Select...", value: product'> </select>
                             </td>
                             <td class='price' data-bind='with: product'>
                                 <span data-bind='text: formatCurrency(price)'> </span>
-                            </td>
+                            </td>                           
+                            
                             <td class='quantity'>
                                 <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' />
                             </td>
                             <td class='price'>
                                 <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
+                            </td>                           
+                            <td class="remove">
+                                <a href='#' data-bind='click: $parents[1].removeLine'></a>
                             </td>
-                            <td>
-                                <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
-                            </td> -->
                         </tr>
                     </tbody>
                 </table>
 
-                <!-- <p class='grandTotal'>Total value: <span data-bind='text: formatCurrency(grandTotal())'> </span>
+                <p class='grandTotal'>Total value: <span data-bind='text: formatCurrency($parent.grandTotal())'> </span>
                 </p>
-    <button data-bind='click: addLine'>Add product</button>
-    <button data-bind='click: save'>Submit order</button> -->
+                <button data-bind='click: $parent.addLine'>Add product</button>
+                <button data-bind='click: $parent.save'>Submit order</button>
             </div>
 
         </div>

@@ -21,13 +21,13 @@ var shouter = new ko.subscribable();
 var selectBrandModel = function(){
     this.showBrands = ko.observable(true);    
 
-    this.lines = ko.observableArray();
+    this.brands = ko.observableArray();
     this.selectBrand = function(event) {       
-       this.lines.push({'category' : event.name, 'products' : event.products});
-       console.log(this.lines);
+       this.brands.push({'category' : event.name, 'products' : event.products});
+       console.log(this.brands);
     }.bind(this);
 
-    this.lines.subscribe(function(newValue) {
+    this.brands.subscribe(function(newValue) {
         shouter.notifySubscribers(newValue, "productsToPublish");
         selectBrandModel.showBrands(false);
     });
@@ -53,17 +53,33 @@ var selectMobileModel = function(){
     });
  
     // Operations
-    self.addLine = function() { self.lines.push(new CartLine()) };
-    self.removeLine = function(line) { self.lines.remove(line) };
+    self.addLine = function() { 
+        self.lines.push(new CartLine()); 
+    };
+
+    self.removeLine = function(line) { 
+        self.lines.remove(line); 
+    };
+
     self.save = function() {
         var dataToSave = $.map(self.lines(), function(line) {
             return line.product() ? {
                 productName: line.product().name,
                 quantity: line.quantity()
-            } : undefined
+            } : undefined;
         });
-        alert("Could now send this to server: " + JSON.stringify(dataToSave));
+        alert("Saved");
     };
+
+    self.totalItems = ko.computed(function() {
+        var count = 0;
+        $.each(self.lines(), function() {            
+            if(this.subtotal() > 0) {
+                count += parseInt(this.quantity());
+            }            
+        });
+        return count;
+    });
 };
 
 var homeModel = (function(){
