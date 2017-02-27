@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "cff59bc81dafae9cd4cd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f44397e536e006111dce"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -16326,7 +16326,7 @@ var productCategories = [{
     "image": "phonePlaceholder.png"
   }],
   "name": "Apple",
-  "image": "/src/images/Apple.png"
+  "image": "./src/images/Apple.png"
 }, {
   "products": [{
     "name": "Galaxy J5 ",
@@ -16378,7 +16378,7 @@ var productCategories = [{
     "image": "phonePlaceholder.png"
   }],
   "name": "Samsung",
-  "image": "/src/images/Samsung.png"
+  "image": "./src/images/Samsung.png"
 }, {
   "products": [{
     "name": "Sony Xperia XA",
@@ -16398,7 +16398,7 @@ var productCategories = [{
     "image": "phonePlaceholder.png"
   }],
   "name": "Sony",
-  "image": "/src/images/Sony.png"
+  "image": "./src/images/Sony.png"
 }];
 
 exports.default = productCategories;

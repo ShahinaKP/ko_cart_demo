@@ -23,7 +23,7 @@ const productCategories = [
       }
     ],
     "name": "Apple",
-    "image": "/src/images/Apple.png"
+    "image": "./src/images/Apple.png"
   },
   {
     "products": [
@@ -89,7 +89,7 @@ const productCategories = [
       }
     ],
     "name": "Samsung",
-    "image": "/src/images/Samsung.png"
+    "image": "./src/images/Samsung.png"
   },
   {
     "products": [
@@ -115,7 +115,7 @@ const productCategories = [
       }
     ],
     "name": "Sony",
-    "image": "/src/images/Sony.png"
+    "image": "./src/images/Sony.png"
   }
 ];
 
