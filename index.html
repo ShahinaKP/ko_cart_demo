@@ -5,80 +5,62 @@
         <link rel="stylesheet" type="text/css" href="build/main.css">
     </head>
     <body>
-        <h1>mycart.in</h1>
-        <!-- <p class="totalCount" data-bind="text: totalItems()"></p> -->
-        <div data-bind="with:selectBrandModel">
-            <div data-bind="visible: showBrands" class="cartWrapper">
-                <p data-bind="text: brandHeader"></p>
-                <ul data-bind="foreach: productCategories"> 
-                    <li data-bind="style: { backgroundImage: 'url(' + image + ')' }, click: $parent.selectBrand"></li>
-                </ul>
+        <div class="contentWrapper"> 
+        <header>
+            <h1>mycart.in</h1>
+        </header>
+            <div class="content">   
+            <div data-bind="with:selectBrandModel">
+                <div data-bind="visible: showBrands" class="cartWrapper">
+                    <p data-bind="text: brandHeader"></p>
+                    <ul data-bind="foreach: productCategories"> 
+                        <li data-bind="style: { backgroundImage: 'url(' + image + ')' }, click: $parent.selectBrand"></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div data-bind="with:selectMobileModel" class="mobilesWrapper"> 
+                <div data-bind="visible: showMobiles, foreach: productsArray">
+                    <table width='100%'>
+                        
+                        <tbody data-bind='foreach: $parent.lines'>
+                            <tr>
+                                <td class="tableCell" >
+                                    <select class="mobileDropdown" data-bind='options: $parent.products, optionsText: "name", optionsCaption: "Choose your mobile", value: product'> </select>
+                                </td>
+
+                                <td class='tableCell' data-bind='with: product'>
+                                    <img data-bind="attr:{ src: '/src/images/' + image }" />
+                                </td>
+                                
+                                <td class='tableCell1' data-bind='with: product'>
+                                    <span data-bind='text: formatCurrency(price)'> </span>
+                                </td>                           
+                                
+                                <td class='tableCell2'>
+                                    <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' type="number" />
+                                </td>
+                                <td class='tableCell1'>
+                                    <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
+                                </td  class='tableCell2'>                           
+                                <td class="remove">
+                                    <a href='#' data-bind='click: $parents[1].removeLine'></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="footerSection">
+                        <p class='grandTotal'>Total Amount: <span data-bind='text: formatCurrency($parent.grandTotal())'> </span>
+                        </p>
+                        <button data-bind='click: $parent.addLine'>Add More</button>
+                        <button data-bind='click: $parent.save'>Submit order</button>                    
+                    </div>                
+                </div>
+
             </div>
         </div>
-        
-        <div data-bind="with:selectMobileModel" class="mobilesWrapper"> 
-            <div data-bind="visible: showMobiles, foreach: productsArray">    
-                <!-- <ul data-bind="foreach: products"> 
-                  <li >
-                      <img data-bind="attr:{ src: '/src/images/' + image }" />
-                      <span data-bind='text: name'> </span>
-                      <span data-bind='text: formatCurrency(price)'> </span>
-                      <input data-bind='value: $parents[1].cartQty, valueUpdate: "afterkeydown"' type="number" />
-                      <button data-bind="click: $parents[1].addToCart">Add to cart</button>
-                  </li>
-                </ul> 
-
-                <div>
-                    <p data-bind='text: $parents[1].cartTotal'>TESTING</p>
-                </div>   -->         
-                
-                <table width='100%'>
-                    <!-- <thead>
-                        <tr>
-                            <th width='25%'>Product</th>
-                            <th class='image' width='25%'></th>
-                            <th class='price' width='15%'>Price</th>
-                            <th class='quantity' width='10%'>Quantity</th>
-                            <th class='price' width='15%'>Subtotal</th>
-                            <th width='10%'> </th>
-                        </tr>
-                    </thead> -->
-                    <tbody data-bind='foreach: $parent.lines'>
-                        <tr>
-                            <td class="tableCell" >
-                                <select class="mobileDropdown" data-bind='options: $parent.products, optionsText: "name", optionsCaption: "Choose your mobile", value: product'> </select>
-                            </td>
-
-                            <td class='tableCell' data-bind='with: product'>
-                                <img data-bind="attr:{ src: '/src/images/' + image }" />
-                            </td>
-                            
-                            <td class='tableCell1' data-bind='with: product'>
-                                <span data-bind='text: formatCurrency(price)'> </span>
-                            </td>                           
-                            
-                            <td class='tableCell2'>
-                                <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' type="number" />
-                            </td>
-                            <td class='tableCell1'>
-                                <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
-                            </td  class='tableCell2'>                           
-                            <td class="remove">
-                                <a href='#' data-bind='click: $parents[1].removeLine'></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="footerSection">
-                    <p class='grandTotal'>Total Amount: <span data-bind='text: formatCurrency($parent.grandTotal())'> </span>
-                    </p>
-                    <button data-bind='click: $parent.addLine'>Add More</button>
-                    <button data-bind='click: $parent.save'>Submit order</button>                    
-                </div>                
-            </div>
-
+        <footer></footer>
         </div>
-        
     </body>
     <script src="build/bundle.js"></script>
 </html>

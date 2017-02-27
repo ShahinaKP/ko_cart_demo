@@ -3,19 +3,32 @@ body {
 	font-family: arial;
 	font-size: 14px; 
 	margin: 0;
-	padding: 0 2em;
+	padding: 0;
+    height: 100%;
+}
+html {
+  height: 100%;
 }
 
+.contentWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+    overflow: auto;
+}
 h1 {
-	background: url(../images/mobileshop.png) top right no-repeat;
-    /*background-size: 15% 100%;*/
-    color: #862d2d;
-    padding: 30px 26px 180px;
+    background-color: #2F4F4F;
+    color: #fff;
+    padding: 25px;
     position: relative;
     font-style: italic;
+    margin: 0;
 }
 .cartWrapper p {
-    color: #862d2d;
+    color: #2F4F4F;
     padding: 0 63px;
     font-size: 30px;
 }
@@ -42,7 +55,7 @@ h1 {
 .cartWrapper ul {	    
     float: left;
     margin: 0 auto;
-    width: 98%;
+    width: 96%;
 }
 .cartWrapper li {
     background-repeat: no-repeat;
@@ -53,14 +66,14 @@ h1 {
     float: left;
     margin: 0px 2%;
     width: 28%;
-    border: 2px solid #862d2d;
+    border: 2px solid #2F4F4F;
     background-position: 0px 18px;
 }
 
 table {
-	padding: 1em;
+	/*padding: 1em;
     border-radius: 2px;
-    border: 1px solid #862d2d;
+    border: 1px solid #2F4F4F;*/
 }
 
 table tbody {
@@ -92,30 +105,15 @@ table tr, td {
     color: #000;
     font-weight: 700;
     font-size: 16px;
-    background: #862d2d;
+    background: #fff;
+    border: 1px solid #2F4F4F;
     display: block;
     padding: 0 50px 0 30px;
     cursor: pointer;
 }
 
-.mobileDropdown option:before {
-    font-family: 'icomoon';
-    font-style: normal;
-    speak: none;
-    font-weight: normal;
-    position: absolute;
-    font-size: 40px;
-    line-height: 40px;
-    width: 50px;
-    top: 50%;
-    left: 15px;
-    margin-top: -20px;
-    text-align: center;
-    content: "\e958";
-}
-
 .remove a{
-	background: url(../images/delete.png) center right no-repeat;
+	background: url(/src/images/delete.png) center right no-repeat;
     background-size: 20px 20px;    
     display: block;
     height: 25px;
@@ -130,11 +128,12 @@ table tr, td {
 }
 
 .footerSection {
+    margin-right: 20px;
     text-align: right;
 }
 .footerSection p, .mobilesWrapper .footerSection span {
     line-height: 60px;
-    color: #862d2d;
+    color: #2F4F4F;
     font-weight: 700;
     font-size: 16px;
     float: none;
@@ -158,7 +157,8 @@ table tr, td {
 }
 
 .mobilesWrapper input {
-    background: #862d2d;
+    background: #fff;
+    border: 1px solid #2F4F4F;
     padding: 5px;
     height: 40px;
     color: #000;
@@ -174,6 +174,12 @@ table tr, td {
     color: #000;
     font-weight: 700;
     font-size: 16px;
-    background: #862d2d;
+    background: #2F4F4F;
     padding: 0 15px;  
+}
+
+footer {
+    height: 75px;
+    width: 100%;
+    background-color: #2F4F4F;
 }

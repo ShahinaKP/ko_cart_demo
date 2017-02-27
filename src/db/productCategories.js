@@ -94,63 +94,23 @@ const productCategories = [
   {
     "products": [
       {
-        "name": "1900s Vintage Bi-Plane",
+        "name": "Sony Xperia XA",
         "price": 34.25,
         "image": "phonePlaceholder.png"
       },
       {
-        "name": "1900s Vintage Tri-Plane",
+        "name": "Sony Xperia X 64GB",
         "price": 36.23,
         "image": "phonePlaceholder.png"
       },
       {
-        "name": "1928 British Royal Navy Airplane",
+        "name": "Sony Xperia Z5 Premium",
         "price": 66.74,
         "image": "phonePlaceholder.png"
       },
       {
-        "name": "1980s Black Hawk Helicopter",
+        "name": "Sony Xperia XA Ultra Dual",
         "price": 77.27,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "ATA: B757-300",
-        "price": 59.33,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "America West Airlines B757-200",
-        "price": 68.8,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "American Airlines: B767-300",
-        "price": 51.15,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "American Airlines: MD-11S",
-        "price": 36.27,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "Boeing X-32A JSF",
-        "price": 32.77,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "Corsair F4U ( Bird Cage)",
-        "price": 29.34,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "F/A 18 Hornet 1/72",
-        "price": 54.4,
-        "image": "phonePlaceholder.png"
-      },
-      {
-        "name": "P-51-D Mustang",
-        "price": 49.0,
         "image": "phonePlaceholder.png"
       }
     ],
